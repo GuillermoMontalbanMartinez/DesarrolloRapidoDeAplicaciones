@@ -1,0 +1,78 @@
+p {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+footer {
+  width: 100%;
+  background-color: #000000;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+
+  width: 100%;
+}
+
+.box {
+  padding: 20px;
+}
+
+.centro {
+  text-align: center;
+  align-self: center;
+  flex-grow: 3;
+}
+
+.izquierda {
+  display: flex;
+  text-align: center;
+  flex-grow: 1;
+  flex-flow: row wrap;
+  width: 20%;
+}
+
+.titulo {
+  color: white;
+  width: 100%;
+}
+
+.fotos {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  width: 100%;
+}
+
+.foto img {
+  width: 45px;
+  height: 45px;
+}
+
+.fotospec img {
+  width: 85px;
+  height: 45px;
+}
+
+.derecha {
+  display: flex;
+  text-align: center;
+  flex-grow: 1;
+  flex-flow: row wrap;
+  width: 20%;
+}
+
+.fotoizq img {
+  width: 60px;
+  height: 45px;
+}
+
+.fotoder img {
+  height: 60px;
+  width: 60px;
+}
+
+
+
+
