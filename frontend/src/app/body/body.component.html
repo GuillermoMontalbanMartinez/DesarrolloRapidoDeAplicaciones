@@ -4,14 +4,9 @@
   </div>
 
   <div class="tarjeta">
-    <app-exercise style="margin: 10px"></app-exercise>
-    <app-exercise style="margin: 10px" ></app-exercise>
-    <app-exercise style="margin: 10px"></app-exercise>
-    <app-exercise style="margin: 10px"></app-exercise>
-    <app-exercise style="margin: 10px"></app-exercise>
-    <app-exercise style="margin: 10px"></app-exercise>
-    <app-exercise style="margin: 10px"></app-exercise>
-    <app-exercise style="margin: 10px"></app-exercise>
-    <app-exercise style="margin: 10px"></app-exercise>
+    <div *ngFor="let exercise of exercises">
+      <app-exercise style="margin: 10px" [bodyPart]="exercise?.bodyPart" [equipment]="exercise?.equipment" [target]="exercise?.target" [name]="exercise?.name"></app-exercise>
+    </div>
+
   </div>
 </div>
