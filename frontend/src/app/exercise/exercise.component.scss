@@ -2,4 +2,34 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  border: 3px solid rgba(20, 92, 171);
+  padding: 20px;
+  margin: 15px;
+  border-radius: 25px;
+  box-shadow: 3px 3px 0px 3px rgb(214, 213, 213);
+}
+
+.details-button button {
+  width: 100px;
+  border-radius: 5px;
+  background-color: rgba(20, 92, 171);
+  color: white;
+  transition: all 1s;
+  cursor: pointer;
+}
+
+.details-button:hover {
+  opacity: 0.9;
+
+}
+
+h4 {
+  color: rgba(20, 92, 171);
+  letter-spacing: 2px;
+  font-weight: 800;
+}
+
+span {
+  color: rgba(20, 92, 171);
+  font-weight: 800;
 }
