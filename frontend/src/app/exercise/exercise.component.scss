@@ -8,7 +8,6 @@
   border-radius: 25px;
   box-shadow: 3px 3px 0px 3px rgb(214, 213, 213);
   width: 450px;
-
 }
 
 .details-button button {
@@ -25,6 +24,23 @@
 
 }
 
+.imagen-container {
+  padding: 15px;
+  border-radius: 25px;
+  text-align: center;
+  border: 5px solid;
+  border-color: rgba(20, 92, 171);
+  border-radius:50px;
+  img {
+    width: 225px;
+    height: 225px;
+  }
+}
+
+.info {
+  text-align: center;
+}
+
 h4 {
   color: rgba(20, 92, 171);
   letter-spacing: 2px;
@@ -36,12 +52,3 @@ span {
   font-weight: 800;
 }
 
-img {
-  width: 30px;
-  height: 30px;
-}
-
-img:hover {
-  cursor: pointer;
-  opacity: 0.9;
-}

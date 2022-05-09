@@ -8,6 +8,10 @@ import { Exercise } from '../exercise';
 })
 
 export class SelectorComponent implements OnInit {
+  exerciseChoose : Exercise = {
+    value: '',
+    viewValue: ''
+  }
   exercises: Exercise[] = [
     {value: 'back', viewValue: 'Espalda'},
     {value: 'cardio', viewValue: 'Cardio'},
@@ -24,6 +28,12 @@ export class SelectorComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  chooseOption(option: Exercise) {
+    this.exerciseChoose.value = option.value;
+    this.exerciseChoose.viewValue = option.viewValue;
+    console.log(this.exerciseChoose);
   }
 
 }

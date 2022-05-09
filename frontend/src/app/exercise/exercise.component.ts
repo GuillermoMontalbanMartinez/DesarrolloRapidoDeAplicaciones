@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ExerciseComponent implements OnInit {
 
   @Input() name: string = "";
+  @Input() image: string = "";
   @Input() bodyPart: string = "";
   @Input() target: string = "";
   @Input() equipment: string = "";

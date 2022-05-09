@@ -1,9 +1,15 @@
-<h4>Zonas musculares</h4>
-<mat-form-field appearance="fill">
-  <mat-label>Favorite food</mat-label>
-  <mat-select>
-    <mat-option *ngFor="let exercise of exercises" [value]="exercise.value">
-      {{exercise.viewValue}}
-    </mat-option>
-  </mat-select>
-</mat-form-field>
+<div class="container-selector">
+  <div class="title-selector">
+    <h4>Zonas musculares</h4>
+  </div>
+  <div class="selector">
+    <mat-form-field appearance="fill">
+      <mat-label>Zonas musculares</mat-label>
+      <mat-select >
+        <mat-option (click)="chooseOption(exercise)" *ngFor="let exercise of exercises" [value]="exercise.value">
+          {{exercise.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
