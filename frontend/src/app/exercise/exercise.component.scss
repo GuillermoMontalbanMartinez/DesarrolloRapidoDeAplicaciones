@@ -35,3 +35,13 @@ span {
   color: rgba(20, 92, 171);
   font-weight: 800;
 }
+
+img {
+  width: 30px;
+  height: 30px;
+}
+
+img:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}

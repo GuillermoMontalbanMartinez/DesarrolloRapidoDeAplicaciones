@@ -1,8 +1,4 @@
 <div class="container-body">
-  <div class="menu">
-    <app-menu></app-menu>
-  </div>
-
   <div class="tarjeta">
     <div *ngFor="let exercise of exercises">
       <app-exercise style="margin: 10px" [bodyPart]="exercise?.bodyPart" [equipment]="exercise?.equipment" [target]="exercise?.target" [name]="exercise?.name"></app-exercise>

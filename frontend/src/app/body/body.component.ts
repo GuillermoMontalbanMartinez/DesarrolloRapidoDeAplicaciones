@@ -20,17 +20,18 @@ export class BodyComponent implements OnInit {
       method: 'GET',
       headers: {
         'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com',
-        'X-RapidAPI-Key': '6905b22d97msh0448444f3f9e16bp1a8733jsnd77925bf8e66'
+        // b
+        'X-RapidAPI-Key': 'c00437a1d7msh44d1da88d6a4b4dp1df6f0jsn88d42cd0f5e'
       }
     };
 
     for (let i = 28; i <= 32; i++) {
-    let url = `https://exercisedb.p.rapidapi.com/exercises/exercise/00` + i;
+    let url = `https://exercisedb.p.rapidapi.com/exercises/exercise/00` +i;
     let rest = await fetch(url, options);
     let exercise = await rest.json();
     this.exercises.push(exercise);
     }
-
+console.log(this.exercises);
   }
 
 }
