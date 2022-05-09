@@ -8,6 +8,11 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { ExerciseComponent } from './exercise/exercise.component';
 import { BodyComponent } from './body/body.component';
+import { SelectorComponent } from './selector/selector.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -16,11 +21,16 @@ import { BodyComponent } from './body/body.component';
     FooterComponent,
     HeaderComponent,
     ExerciseComponent,
-    BodyComponent
+    BodyComponent,
+    SelectorComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
