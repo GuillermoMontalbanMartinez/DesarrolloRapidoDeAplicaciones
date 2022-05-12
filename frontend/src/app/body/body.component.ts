@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { ExerciseService } from '../exercise.service';
 
 @Component({
   selector: 'app-body',
@@ -9,21 +10,16 @@ import { Observable } from 'rxjs';
 export class BodyComponent implements OnInit {
   exercises: any[] = [];
 
-  constructor() { }
+  constructor(private exerciseService: ExerciseService) { }
 
   ngOnInit(): void {
-    this.getExercise();
+    // this.getExercise();
+    this.getZonaMuscular('chest');
   }
 
+  /**
   public async getExercise() {
-    const options = {
-      method: 'GET',
-      headers: {
-        'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com',
-        // b
-        'X-RapidAPI-Key': 'c00437a1d7msh44d1da88d6a4b4dp1df6f0jsn88d42cd0f5eb'
-      }
-    };
+
 
     for (let i = 28; i <= 28; i++) {
     let url = `https://exercisedb.p.rapidapi.com/exercises/exercise/00` +i;
@@ -31,7 +27,15 @@ export class BodyComponent implements OnInit {
     let exercise = await rest.json();
     this.exercises.push(exercise);
     }
-console.log(this.exercises);
+    console.log(this.exercises);
+
   }
 
+  */
+
+  getZonaMuscular(exercise: string) {
+    this.exerciseService.getZonaMuscular('chest').subscribe(data => {
+      console.log(data);
+    });
+  }
 }

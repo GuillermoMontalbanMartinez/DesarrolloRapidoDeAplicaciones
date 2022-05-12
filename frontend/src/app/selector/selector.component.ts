@@ -36,5 +36,7 @@ export class SelectorComponent implements OnInit {
     console.log(this.exerciseChoose);
   }
 
+  
+
 }
 

@@ -6,8 +6,7 @@ import { FooterComponent } from './footer/footer.component';
 const routes: Routes = [
   { path: '', component: BodyComponent},
   { path: 'body', component: BodyComponent},
-  { path: 'footer', component: FooterComponent}, // ruta al footer de prueba
-  {path: '', redirectTo: '/ ', pathMatch: 'full'}
+  { path: '', redirectTo: '/ ', pathMatch: 'full'}
 ];
 
 @NgModule({
