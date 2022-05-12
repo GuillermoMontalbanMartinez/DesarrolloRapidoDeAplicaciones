@@ -33,8 +33,8 @@ export class BodyComponent implements OnInit {
 
   */
 
-  getZonaMuscular(exercise: string) {
-    this.exerciseService.getZonaMuscular('chest').subscribe(data => {
+  getZonaMuscular(bodypart: string) {
+    this.exerciseService.getZonaMuscular(bodypart).subscribe(data => {
       this.exercises.push(data);
       console.log(this.exercises);
       console.log(data);
