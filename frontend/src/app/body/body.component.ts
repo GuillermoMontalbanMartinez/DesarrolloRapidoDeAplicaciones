@@ -35,6 +35,8 @@ export class BodyComponent implements OnInit {
 
   getZonaMuscular(exercise: string) {
     this.exerciseService.getZonaMuscular('chest').subscribe(data => {
+      this.exercises.push(data);
+      console.log(this.exercises);
       console.log(data);
     });
   }
