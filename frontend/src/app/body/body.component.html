@@ -3,9 +3,8 @@
     <app-selector></app-selector>
   </div>
   <div class="tarjeta">
-    <div *ngFor="let exercise of exercises">
+    <div *ngFor="let exercise of exercises[0]">
       <app-exercise style="margin: 10px"  [image]="exercise?.gifUrl" [bodyPart]="exercise?.bodyPart" [equipment]="exercise?.equipment" [target]="exercise?.target" [name]="exercise?.name"></app-exercise>
     </div>
-
   </div>
 </div>

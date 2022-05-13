@@ -1,8 +1,10 @@
 export interface exerciseInterface {
-  name: string;
-  image: string;
   bodyPart: string;
-  target: string;
   equipment: string;
+  image: string;
+  id: string;
+  name: string;
+  target: string;
+
 }
 

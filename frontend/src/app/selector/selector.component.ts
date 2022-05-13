@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Exercise } from '../exercise';
 
 @Component({
@@ -25,7 +26,7 @@ export class SelectorComponent implements OnInit {
     {value: 'waist', viewValue: 'Cintura'},
   ];
 
-  constructor() { }
+  constructor(private router : Router) { }
 
   ngOnInit(): void {
   }
@@ -34,9 +35,10 @@ export class SelectorComponent implements OnInit {
     this.exerciseChoose.value = option.value;
     this.exerciseChoose.viewValue = option.viewValue;
     console.log(this.exerciseChoose);
+    this.router.navigateByUrl("/?id=" + this.exerciseChoose.value);
   }
 
-  
+
 
 }
 

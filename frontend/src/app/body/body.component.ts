@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { ExerciseService } from '../exercise.service';
+import { exerciseInterface } from '../exerciseInterface';
 
 @Component({
   selector: 'app-body',
@@ -9,13 +11,30 @@ import { ExerciseService } from '../exercise.service';
 })
 export class BodyComponent implements OnInit {
   exercises: any[] = [];
-
-  constructor(private exerciseService: ExerciseService) { }
+  idExercises: string = '';
+  constructor(private exerciseService: ExerciseService, private router: ActivatedRoute) { }
 
   ngOnInit(): void {
     // this.getExercise();
     this.getZonaMuscular('chest');
+    this.router.queryParams.subscribe(params => {
+      this.idExercises = params['id'];
+      this.getZonaMuscular(this.idExercises);
+    });
   }
+
+
+
+  public async getZonaMuscular(bodypart: string) {
+    this.exercises = [];
+    this.exerciseService.getZonaMuscular(bodypart).subscribe(data => {
+      this.exercises.push(data);
+      console.log(this.exercises);
+      console.log(data);
+    });
+  }
+}
+
 
   /**
   public async getExercise() {
@@ -32,12 +51,3 @@ export class BodyComponent implements OnInit {
   }
 
   */
-
-  getZonaMuscular(bodypart: string) {
-    this.exerciseService.getZonaMuscular(bodypart).subscribe(data => {
-      this.exercises.push(data);
-      console.log(this.exercises);
-      console.log(data);
-    });
-  }
-}
