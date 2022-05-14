@@ -3,6 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   h3 {
     font-size: 1.5rem;
     font-weight: 800;
@@ -15,6 +16,17 @@
     width: 600px;
     height: 600px;
     margin-top: 3rem;
+    margin-right: 100px;
   }
+
+  .container_rutine_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+
 }
 
