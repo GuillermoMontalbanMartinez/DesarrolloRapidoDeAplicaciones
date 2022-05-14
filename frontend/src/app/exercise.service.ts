@@ -15,7 +15,7 @@ export class ExerciseService {
     headers: {
       'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com',
       // b
-      'X-RapidAPI-Key': 'c00437a1d7msh44d1da88d6a4b4dp1df6f0jsn88d42cd0f5e',
+      'X-RapidAPI-Key': 'c00437a1d7msh44d1da88d6a4b4dp1df6f0jsn88d42cd0f5eb',
     },
   };
 
