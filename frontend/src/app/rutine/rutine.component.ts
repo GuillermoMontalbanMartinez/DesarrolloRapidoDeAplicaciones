@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./rutine.component.scss']
 })
 export class RutineComponent implements OnInit {
-
+  rutinesSaved : any[] = [];
   constructor() { }
 
   ngOnInit(): void {

@@ -1,1 +1,16 @@
-<p>rutine works!</p>
+<div *ngIf="rutinesSaved.length === 0; then thenBlock; else elseBlock"></div>
+
+<ng-template #thenBlock>
+  <div class="container_rutine">
+    <div class="titulo">
+      <h3> No existen rutinas</h3>
+    </div>
+
+    <div class="container_image">
+      <img id="imagen" src="./assets/homer.png"/>
+    </div>
+  </div>
+
+</ng-template>
+
+<ng-template #elseBlock> rutinas creadas </ng-template>
