@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
 import { ExerciseService } from '../exercise.service';
-import { exerciseInterface } from '../exerciseInterface';
 
 @Component({
   selector: 'app-body',
@@ -15,8 +13,7 @@ export class BodyComponent implements OnInit {
   constructor(private exerciseService: ExerciseService, private router: ActivatedRoute) { }
 
   ngOnInit(): void {
-    // this.getExercise();
-    this.getZonaMuscular('chest');
+    //this.getZonaMuscular('cardio'); // poner por defecto en la aplicación
     this.router.queryParams.subscribe(params => {
       this.idExercises = params['id'];
       this.getZonaMuscular(this.idExercises);

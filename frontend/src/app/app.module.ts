@@ -16,6 +16,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { ExerciseService } from './exercise.service';
 import { HttpClientModule } from '@angular/common/http';
 import { RutineComponent } from './rutine/rutine.component';
+import { ExerciseUploadComponent } from './exercise-upload/exercise-upload.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { RutineComponent } from './rutine/rutine.component';
     ExerciseComponent,
     BodyComponent,
     SelectorComponent,
-    RutineComponent
+    RutineComponent,
+    ExerciseUploadComponent
   ],
   imports: [
     BrowserModule,
