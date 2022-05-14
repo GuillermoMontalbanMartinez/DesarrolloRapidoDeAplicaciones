@@ -16,7 +16,7 @@ public class Routine {
     @Id
     @Column(name="ID", nullable = false)
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private long idRoutine;
+    private Long idRoutine;
 
     @ManyToMany(mappedBy="routine")
     private HashSet<Exercise> exercises;
@@ -48,8 +48,6 @@ public class Routine {
     public String exerciseOfTheRoutine() {
         return this.exercises.toString();
     }
-
-
 
     
 }

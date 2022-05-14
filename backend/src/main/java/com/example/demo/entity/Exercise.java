@@ -22,7 +22,7 @@ public class Exercise {
     @Id
     @Column(name="ID", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idExercise;
+    private Long idExercise;
 
     @Column(name="Id_Exercise")
     @NotBlank(message = "Id is mandatory")
