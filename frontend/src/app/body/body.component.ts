@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ExerciseService } from '../exercise.service';
+import { exerciseInterface } from '../exerciseInterface';
 
 @Component({
   selector: 'app-body',
@@ -8,7 +9,8 @@ import { ExerciseService } from '../exercise.service';
   styleUrls: ['./body.component.scss']
 })
 export class BodyComponent implements OnInit {
-  exercises: any[] = [];
+  exercises: any[] = []; // ejercicios de las tarjetas
+  exercisesLoaded: exerciseInterface[] = []; // ejercicios cargados para el componente exercise-upload
   idExercises: string = '';
   constructor(private exerciseService: ExerciseService, private router: ActivatedRoute) { }
 
@@ -32,19 +34,3 @@ export class BodyComponent implements OnInit {
   }
 }
 
-
-  /**
-  public async getExercise() {
-
-
-    for (let i = 28; i <= 28; i++) {
-    let url = `https://exercisedb.p.rapidapi.com/exercises/exercise/00` +i;
-    let rest = await fetch(url, options);
-    let exercise = await rest.json();
-    this.exercises.push(exercise);
-    }
-    console.log(this.exercises);
-
-  }
-
-  */

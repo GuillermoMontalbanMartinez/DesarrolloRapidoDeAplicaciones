@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./exercise.component.scss']
 })
 export class ExerciseComponent implements OnInit {
-
+  
   @Input() name: string = "";
   @Input() image: string = "";
   @Input() bodyPart: string = "";
@@ -18,6 +18,9 @@ export class ExerciseComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  loadExercise(): void {
+
+  }
 
 
 }
