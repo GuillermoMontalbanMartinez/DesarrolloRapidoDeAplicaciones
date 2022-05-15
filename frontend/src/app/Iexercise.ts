@@ -1,9 +1,10 @@
-export interface exerciseInterface {
+export interface Iexercise {
   bodyPart: string;
   equipment: string;
-  image: string;
+  gifUrl: string;
   id: string;
   name: string;
   target: string;
 }
+
 

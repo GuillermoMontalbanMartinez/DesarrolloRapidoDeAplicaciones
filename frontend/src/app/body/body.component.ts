@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ExerciseService } from '../exercise.service';
-import { exerciseInterface } from '../exerciseInterface';
+import { Iexercise } from '../Iexercise';
 
 @Component({
   selector: 'app-body',
@@ -10,7 +10,7 @@ import { exerciseInterface } from '../exerciseInterface';
 })
 export class BodyComponent implements OnInit {
   exercises: any[] = []; // ejercicios de las tarjetas
-  exercisesLoaded: exerciseInterface[] = []; // ejercicios cargados para el componente exercise-upload
+  exercisesLoaded: Iexercise[] = []; // ejercicios cargados para el componente exercise-upload
   idExercises: string = '';
   constructor(private exerciseService: ExerciseService, private router: ActivatedRoute) { }
 
