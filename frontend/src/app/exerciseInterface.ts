@@ -5,6 +5,5 @@ export interface exerciseInterface {
   id: string;
   name: string;
   target: string;
-
 }
 
