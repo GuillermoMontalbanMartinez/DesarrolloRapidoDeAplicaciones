@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SharevaluesService } from '../sharevalues.service';
 
 @Component({
   selector: 'app-exercise-upload',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExerciseUploadComponent implements OnInit {
 
-  constructor() { }
+  constructor(private shareValues: SharevaluesService) { }
 
   ngOnInit(): void {
   }
