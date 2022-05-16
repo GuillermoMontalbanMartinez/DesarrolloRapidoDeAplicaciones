@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name="routine")
@@ -17,6 +18,10 @@ public class Routine {
     @Column(name="ID", nullable = false)
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long idRoutine;
+
+    @Column(name="name")
+    @NotBlank(message = "nameRoutine is mandatory")
+    private String name;
 
     @ManyToMany(mappedBy="routine")
     private HashSet<Exercise> exercises;
@@ -43,6 +48,14 @@ public class Routine {
 
     public long getIdRoutine() {
         return idRoutine;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return this.name;
     }
 
     public String exerciseOfTheRoutine() {
