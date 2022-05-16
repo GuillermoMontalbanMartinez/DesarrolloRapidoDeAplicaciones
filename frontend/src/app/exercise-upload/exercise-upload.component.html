@@ -5,7 +5,10 @@
     <input type="text" name="name"  placeholder="Nombre de la rutina">
   </div>
   <div class="exercisesLoaded">
-
+    <div *ngFor="let exercise of shareValues.getExerciseUpload()">
+      <!-- <app-exercise style="margin: 10px"  [image]="exercise?.gifUrl!" [bodyPart]="exercise?.bodyPart!" [equipment]="exercise?.equipment!" [target]="exercise?.target!" [name]="exercise?.name!"></app-exercise> -->
+      <app-tarjeta-exercise-upload style="margin: 10px" [name]="exercise?.name!"></app-tarjeta-exercise-upload>
+    </div>
   </div>
   <div class="buttonSave">
     <button type="button"> Save rutine </button>

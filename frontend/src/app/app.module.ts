@@ -17,6 +17,7 @@ import { ExerciseService } from './exercise.service';
 import { HttpClientModule } from '@angular/common/http';
 import { RutineComponent } from './rutine/rutine.component';
 import { ExerciseUploadComponent } from './exercise-upload/exercise-upload.component';
+import { TarjetaExerciseUploadComponent } from './tarjeta-exercise-upload/tarjeta-exercise-upload.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ExerciseUploadComponent } from './exercise-upload/exercise-upload.compo
     BodyComponent,
     SelectorComponent,
     RutineComponent,
-    ExerciseUploadComponent
+    ExerciseUploadComponent,
+    TarjetaExerciseUploadComponent
   ],
   imports: [
     BrowserModule,
