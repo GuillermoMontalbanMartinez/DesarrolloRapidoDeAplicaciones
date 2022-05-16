@@ -2,12 +2,14 @@ package com.example.demo.entity;
 
 import java.util.HashSet;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
@@ -23,7 +25,7 @@ public class Routine {
     @NotBlank(message = "nameRoutine is mandatory")
     private String name;
 
-    @ManyToMany(mappedBy="routine")
+    @OneToMany(cascade = CascadeType.ALL)
     private HashSet<Exercise> exercises;
     
     public Routine() {

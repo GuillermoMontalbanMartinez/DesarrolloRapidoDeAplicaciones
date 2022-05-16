@@ -27,26 +27,15 @@ public class Exercise {
     private String id;
 
 
-    @JoinTable(name = "rel_exercise_routine", joinColumns = @JoinColumn(name = "idExercise", nullable = false),
-    inverseJoinColumns = @JoinColumn(name = "idRoutine", nullable = false)
-    )
-
-    @ManyToMany(cascade = CascadeType.ALL)
-    private HashSet<Routine> routines;
-
     public Exercise() {
-        this.routines = new HashSet<Routine>();
     }
 
     public Exercise(String id, Routine routine) {
         this.id = id;
-        this.routines = new HashSet<Routine>();
-        this.routines.add(routine);
     }
 
     public Exercise(String id, HashSet<Routine> routines) {
         this.id = id;
-        this.routines = routines;
     }
 
     public long getIdExercise() {
@@ -63,16 +52,6 @@ public class Exercise {
 
     public void setId(String id) {
         this.id = id;
-    }
-
-    public HashSet<Routine> getRoutine() {
-        return routines;
-    }
-
-    public void setRoutine(Routine routine) {
-        if (this.routines == null)
-            this.routines = new HashSet<Routine>();
-         this.routines.add(routine);
     }
 
     @Override
