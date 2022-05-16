@@ -18,7 +18,9 @@ export class SharevaluesService {
       name: valor.name,
       target: valor.target
     }
-    this.exerciseUpload.push(valueToBeAdded);
+    if (this.exerciseUpload.length <= 5) {
+      this.exerciseUpload.push(valueToBeAdded);
+    }
   }
 
   getExerciseUpload(): Iexercise[] {
