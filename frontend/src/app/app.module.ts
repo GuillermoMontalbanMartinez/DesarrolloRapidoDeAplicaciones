@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RutineComponent } from './rutine/rutine.component';
 import { ExerciseUploadComponent } from './exercise-upload/exercise-upload.component';
 import { TarjetaExerciseUploadComponent } from './tarjeta-exercise-upload/tarjeta-exercise-upload.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { TarjetaExerciseUploadComponent } from './tarjeta-exercise-upload/tarjet
     MatInputModule,
     MatSelectModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

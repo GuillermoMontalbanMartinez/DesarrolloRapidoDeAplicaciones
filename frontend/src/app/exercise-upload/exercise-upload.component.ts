@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Iexercise } from '../Iexercise';
+import { Iroutine } from '../Iroutine';
 import { SharevaluesService } from '../sharevalues.service';
 
 @Component({
@@ -13,10 +14,17 @@ export class ExerciseUploadComponent implements OnInit {
   @Input() bodyPart: string = "";
   @Input() target: string = "";
   @Input() equipment: string = "";
+  nameRoutine: string = "";
+
+  Iroutine = { "name": '', "exercises": this.shareValues.getExerciseUpload() } as unknown as Iroutine;
 
   constructor(public shareValues: SharevaluesService) { }
 
   ngOnInit(): void {
+  }
+
+  saveRoutine(): void {
+    this.Iroutine.name = this.nameRoutine;
   }
 
 }

@@ -3,7 +3,7 @@
     <h3> Rutina </h3>
     <div class="entrada">
       <span>Nombre: </span>
-      <input type="text" name="name"  placeholder="Nombre de la rutina">
+      <input type="text" name="nameRoutine" [(ngModel)]="nameRoutine" placeholder="Nombre de la rutina">
     </div>
   </div>
   <div class="exercisesLoaded">
@@ -13,7 +13,7 @@
     </div>
   </div>
   <div class="buttonSave">
-    <button type="button"> Save rutine </button>
+    <button type="button" (click)="saveRoutine()"> Save rutine </button>
   </div>
 
 </div>
