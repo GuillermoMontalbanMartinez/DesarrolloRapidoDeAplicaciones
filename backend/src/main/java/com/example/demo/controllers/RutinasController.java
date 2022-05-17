@@ -7,15 +7,17 @@ import com.example.demo.repository.RoutineRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
-@RequestMapping("/rutine")
+@RequestMapping("/rutines")
 public class RutinasController {
     @Autowired
     private RoutineRepository repository;
@@ -30,7 +32,19 @@ public class RutinasController {
         return (HashSet<Routine>) this.repository.findAll();
     }
 
+    @PutMapping(path = "")
+    public void putRutines(@RequestBody Routine routine) {
+        this.repository.save(routine);
+    }
+
+    @DeleteMapping(path = "")
+    public void deleteRutines(@RequestBody Routine routine) {
+        this.repository.delete(routine);
+    }
+
     
+
+
 }
 
 
