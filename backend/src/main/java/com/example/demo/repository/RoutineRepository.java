@@ -10,6 +10,5 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public interface RoutineRepository extends CrudRepository<Routine, Long> {
-    List<Routine> findByExerciseName(@Param("name") String exerciseName);
 }
     

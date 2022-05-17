@@ -1,6 +1,7 @@
 package com.example.demo.controllers;
 
 import java.util.HashSet;
+import java.util.List;
 
 import com.example.demo.entity.Routine;
 import com.example.demo.repository.RoutineRepository;
@@ -15,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+
 @RestController
 @RequestMapping("/rutines")
 public class RutinasController {
@@ -28,8 +29,8 @@ public class RutinasController {
     }
 
     @GetMapping(path = "")
-    public HashSet<Routine> getRutines() {
-        return (HashSet<Routine>) this.repository.findAll();
+    public List<Routine> getRutines() {
+        return  (List<Routine>) this.repository.findAll();
     }
 
     @PutMapping(path = "")
@@ -42,22 +43,4 @@ public class RutinasController {
         this.repository.delete(routine);
     }
 
-    
-
-
 }
-
-
-/**
- * 
- * 
- * 
- * @PostMapping(path = "/teams")
-    public Team postTeam(@RequestBody Team team) {
-        return repository.save(team);
-    }
-/Guardar un equipo en la base de datos/
-   saveTeam(team:Team):Observable<any>{
-    return this.http.post('http://localhost:8081/api/teams%27,team,this.httpOptions);
-   }
- */

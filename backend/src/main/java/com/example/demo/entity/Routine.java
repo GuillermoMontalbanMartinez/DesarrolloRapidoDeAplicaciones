@@ -1,6 +1,7 @@
 package com.example.demo.entity;
 
 import java.util.HashSet;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -16,40 +17,32 @@ import javax.validation.constraints.NotBlank;
 @Table(name="routine")
 public class Routine {
     @Id
-    @Column(name="ID", nullable = false)
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private Long idRoutine;
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private Long id;
 
-    @Column(name="name")
     @NotBlank(message = "nameRoutine is mandatory")
     private String name;
 
     @OneToMany(cascade = CascadeType.ALL)
-    private HashSet<Exercise> exercises;
+    private List<Exercise> exercises;
     
     public Routine() {
-        this.exercises = new HashSet<Exercise>();
+
     }
 
-    public Routine(Exercise exercise) {
-        this.exercises.add(exercise);
+    public Routine(String name, List<Exercise> exercises) {
+        this.name = name;
+        this.exercises = exercises;
     }
 
-    public Routine(HashSet<Exercise> exercise) {
-        this.exercises = exercise;
-    }
-
-    public HashSet<Exercise> getRoutine() {
+    public List<Exercise> getExercises() {
         return this.exercises;
     }
 
-    public void setRoutine(HashSet<Exercise> exercise) {
+    public void setExercises(List<Exercise> exercise) {
         this.exercises = exercise;
     }
 
-    public long getIdRoutine() {
-        return idRoutine;
-    }
 
     public void setName(String name) {
         this.name = name;

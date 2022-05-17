@@ -14,47 +14,37 @@ import javax.validation.constraints.NotBlank;
 @Table(name = "exercise")
 public class Exercise {
     @Id
-    @Column(name="ID", nullable = false)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idExercise;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
-    @Column(name="Id_Exercise")
-    @NotBlank(message = "Id is mandatory")
-    private String id;
+    @NotBlank(message = "Id exercise is mandatory")
+    private String idExercise;
 
 
     public Exercise() {
     }
 
-    public Exercise(String id, Routine routine) {
-        this.id = id;
-    }
-
-    public Exercise(String id, HashSet<Routine> routines) {
-        this.id = id;
-    }
-
-    public long getIdExercise() {
-        return idExercise;
-    }
-
-    public void setIdExercise(long idExercise) {
+    public Exercise(String idExercise) {
         this.idExercise = idExercise;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public String getIdExercise() {
+        return this.idExercise;
+    }
+
+    public void setIdExercise(String idExercise) {
+        this.idExercise = idExercise;
     }
 
     @Override
     public String toString() {
         return "Exercise{" +
-                "idExercise=" + idExercise +
-                ", id='" + id + '\'' +
+                "id=" + id +
+                ",idExercise=" + idExercise +
                 '}';
     }
 
