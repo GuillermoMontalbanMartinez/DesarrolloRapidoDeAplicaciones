@@ -1,5 +1,6 @@
 package com.example.demo.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -12,7 +13,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
 @Entity
-@Table(name="routine")
+@Table(name="routines")
 public class Routine {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
@@ -28,13 +29,21 @@ public class Routine {
 
     }
 
-    public Routine(String name, List<Exercise> exercises) {
+    public Routine(String name, ArrayList<Exercise> exercises) {
         this.name = name;
         this.exercises = exercises;
     }
 
     public List<Exercise> getExercises() {
         return this.exercises;
+    }
+
+    public long getId() {
+        return this.id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public void setExercises(List<Exercise> exercise) {
@@ -50,8 +59,9 @@ public class Routine {
         return this.name;
     }
 
-    public String exerciseOfTheRoutine() {
-        return "Nombre de la rutina : " + this.name + " " + this.exercises.toString();
+    @Override
+    public String toString() {
+        return "Id: " + this.id + ", nombre de la rutina : " + this.name + " " + this.exercises.toString();
     }
 
     

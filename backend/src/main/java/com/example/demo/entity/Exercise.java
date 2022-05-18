@@ -8,7 +8,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
 @Entity
-@Table(name = "exercise")
+@Table(name = "exercises")
 public class Exercise {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -32,6 +32,11 @@ public class Exercise {
     public void setIdExercise(String idExercise) {
         this.idExercise = idExercise;
     }
+
+    public long getId() {
+        return this.id;
+    }
+
 
     @Override
     public String toString() {
