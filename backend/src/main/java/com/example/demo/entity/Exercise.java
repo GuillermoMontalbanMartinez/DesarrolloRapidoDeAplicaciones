@@ -1,8 +1,5 @@
 package com.example.demo.entity;
 
-import java.util.HashSet;
-
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -26,10 +23,6 @@ public class Exercise {
 
     public Exercise(String idExercise) {
         this.idExercise = idExercise;
-    }
-
-    public Long getId() {
-        return id;
     }
 
     public String getIdExercise() {
