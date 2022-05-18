@@ -12,7 +12,7 @@ import javax.validation.constraints.NotBlank;
 public class Exercise {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private long id;
 
     @NotBlank(message = "Id exercise is mandatory")
     private String idExercise;

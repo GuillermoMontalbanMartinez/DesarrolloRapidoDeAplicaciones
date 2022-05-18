@@ -9,6 +9,5 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RepositoryRestResource
 public interface ExerciseRepository extends CrudRepository<Exercise, Long> {
-
 }
     
