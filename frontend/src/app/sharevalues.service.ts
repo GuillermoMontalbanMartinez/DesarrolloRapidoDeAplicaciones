@@ -18,7 +18,7 @@ export class SharevaluesService {
       name: valor.name,
       target: valor.target
     }
-    if (this.exerciseUpload.length < 5) {
+    if (this.exerciseUpload.length < 5 && this.exerciseUpload.find(x => x.id === valueToBeAdded.id) === undefined) {
       this.exerciseUpload.push(valueToBeAdded);
     }
   }
