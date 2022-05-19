@@ -27,5 +27,8 @@ export class ExerciseUploadComponent implements OnInit {
 
   saveRoutine(): void {
     this.Iroutine.name = this.nameRoutine;
+    this.shareValues.postRoutine(this.Iroutine).subscribe(data => {
+      console.log(data);
+    }
   }
 }
