@@ -25,13 +25,16 @@ export class SharevaluesService {
     }
   }
 
-  getExerciseUploadBackend(): IExercisebackend[] {
-    for (let exercise of this.exerciseUpload) {
-      const exerciseForBackend : IExercisebackend = {
-        idExercise: exercise.id
+  // Crear un array con los id del array exerciseUpload en exerciseUploadBackend
+  convertExerciseToExerciseBackend(): void {
+    this.exerciseUploadBackend = [];
+    this.exerciseUpload.forEach(element => {
+      const exerciseBackend: IExercisebackend = {
+        idExercise: element.id,
       }
+      this.exerciseUploadBackend.push(exerciseBackend);
+    });
   }
-
 
   getExerciseUpload(): Iexercise[] {
     return this.exerciseUpload;

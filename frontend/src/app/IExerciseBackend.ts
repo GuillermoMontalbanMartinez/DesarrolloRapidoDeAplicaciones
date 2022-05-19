@@ -1,4 +1,4 @@
 export interface IExercisebackend {
-  id         : number;
+  // id         : number;
   idExercise : string;
 }
