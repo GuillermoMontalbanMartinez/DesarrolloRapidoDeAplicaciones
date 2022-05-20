@@ -16,7 +16,7 @@ export class ExerciseService {
       // c00437a1d7msh44d1da88d6a4b4dp1df6f0jsn88d42cd0f5eb
       // 7fedecf61dmshb035ea6ad2217a7p1c2bf3jsnca7f3700c68f
       'X-RapidAPI-Key': '7fedecf61dmshb035ea6ad2217a7p1c2bf3jsnca7f3700c68f',
-    },
+    }
   };
 
   constructor(private http: HttpClient) {}

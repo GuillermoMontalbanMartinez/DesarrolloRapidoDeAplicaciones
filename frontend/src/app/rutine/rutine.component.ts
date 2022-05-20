@@ -20,6 +20,7 @@ export class RutineComponent implements OnInit {
     this.routineService.getRoutines().subscribe(
       data => {
         this.rutinesSaved = data;
+        console.log(this.rutinesSaved)
       }
     );
 
