@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class RoutinesService {
-  private url = 'http://localhost:8081/routines';
+  private url = 'http://localhost:8081/api/routines';
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),

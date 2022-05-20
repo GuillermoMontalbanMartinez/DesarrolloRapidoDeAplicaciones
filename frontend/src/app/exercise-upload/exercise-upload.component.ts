@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Iexercise } from '../Iexercise';
 import { Iroutine } from '../Iroutine';
+import { RoutinesService } from '../routines-service.service';
 import { SharevaluesService } from '../sharevalues.service';
 
 @Component({
@@ -8,6 +9,7 @@ import { SharevaluesService } from '../sharevalues.service';
   templateUrl: './exercise-upload.component.html',
   styleUrls: ['./exercise-upload.component.scss'],
 })
+
 export class ExerciseUploadComponent implements OnInit {
   @Input() name: string = '';
   @Input() image: string = '';
@@ -21,14 +23,12 @@ export class ExerciseUploadComponent implements OnInit {
     exercises: this.shareValues.getExerciseUpload(),
   } as unknown as Iroutine;
 
-  constructor(public shareValues: SharevaluesService) {}
+  constructor(public shareValues: SharevaluesService, private routineService: RoutinesService) {}
 
   ngOnInit(): void {}
 
   saveRoutine(): void {
     this.Iroutine.name = this.nameRoutine;
-    this.shareValues.postRoutine(this.Iroutine).subscribe(data => {
-      console.log(data);
-    }
+    this.routineService.saveRoutine(this.Iroutine).subscribe();
   }
 }
