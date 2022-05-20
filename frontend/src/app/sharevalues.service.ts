@@ -26,7 +26,8 @@ export class SharevaluesService {
   }
 
   // Crear un array con los id del array exerciseUpload en exerciseUploadBackend
-  convertExerciseToExerciseBackend(): void {
+  convertExerciseToExerciseBackend(): any {
+    console.log(this.exerciseUpload);
     this.exerciseUploadBackend = [];
     this.exerciseUpload.forEach(element => {
       const exerciseBackend: IExercisebackend = {
@@ -34,6 +35,7 @@ export class SharevaluesService {
       }
       this.exerciseUploadBackend.push(exerciseBackend);
     });
+    return this.exerciseUploadBackend;
   }
 
   getExerciseUpload(): Iexercise[] {

@@ -28,8 +28,6 @@ export class BodyComponent implements OnInit {
     this.exercises = [];
     this.exerciseService.getZonaMuscular(bodypart).subscribe(data => {
       this.exercises.push(data);
-      console.log(this.exercises);
-      console.log(data);
     });
   }
 }

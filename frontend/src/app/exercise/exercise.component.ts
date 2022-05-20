@@ -9,11 +9,13 @@ import { SharevaluesService } from '../sharevalues.service';
 })
 export class ExerciseComponent implements OnInit {
 
+  @Input() id: string = "";
   @Input() name: string = "";
   @Input() image: string = "";
   @Input() bodyPart: string = "";
   @Input() target: string = "";
   @Input() equipment: string = "";
+
 
   constructor(private shareValues: SharevaluesService) { }
 
@@ -25,7 +27,7 @@ export class ExerciseComponent implements OnInit {
       bodyPart: this.bodyPart,
       equipment: this.equipment,
       gifUrl: this.image,
-      id: this.name,
+      id: this.id,
       name: this.name,
       target: this.target
     }
