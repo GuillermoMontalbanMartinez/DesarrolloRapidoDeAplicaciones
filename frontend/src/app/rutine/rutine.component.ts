@@ -16,14 +16,13 @@ export class RutineComponent implements OnInit {
   }
 
   // Rellenar el array rutinesSaved con los valores de la api a traves del metodo getRoutines()
-  fillArray() {
+  fillArray()  {
     this.routineService.getRoutines().subscribe(
       data => {
         this.rutinesSaved = data;
       }
     );
 
-    console.log(this.rutinesSaved);
   }
 
 }

@@ -14,9 +14,13 @@
 </ng-template>
 
 <ng-template #elseBlock>
-  <div class="container_rutines_saved">
-    <div class="titulo_saved">
+  <div class="containerRutinesSaved">
+    <div class="tituloSaved">
       <h3> Mis rutinas Guardadas</h3>
+    </div>
+
+    <div class="fraseScrapping">
+      <h3> Aqui va la frase motivacional </h3>
     </div>
     <div class="rutinasSaved">
       <div *ngFor="let routine of routineService.getRoutines() | async">
