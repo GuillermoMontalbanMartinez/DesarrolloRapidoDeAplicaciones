@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Iexercise } from '../Iexercise';
 import { Iroutine } from '../Iroutine';
 import { RoutinesService } from '../routines-service.service';
 import { SharevaluesService } from '../sharevalues.service';
