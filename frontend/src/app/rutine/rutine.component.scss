@@ -37,45 +37,49 @@
   align-items: center;
 
   .tituloSaved {
+    width: 100%;
+    height: 400px;
+    display:grid;
+    place-content: center;
+    place-items: center;
+    h2 {
+      display:block;
+      font-weight: 800;
+      margin: 0 0 16px;
+      text-align: center;
+    }
 
+    span {
+      color: #828282;
+      display:block;
+      font-size: 100px;
+      line-height: 1.1;
+      padding:0 12px;
+      position:relative;
+    }
+
+
+    span::before {
+      background: linear-gradient(90deg, var(--start-color), var(--end-color));
+      content: var(--content);
+      position: absolute;
+      inset: 0;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: animated 9s infinite;
+      animation-delay: var(--delay);
+    }
+
+    @keyframes animated {
+      0%, 16.667%, 100% {
+        opacity: 1;
+      }
+
+      33.333%, 83.333% {
+        opacity:0;
+      }
+    }
   }
 
 }
 
-
-h2 {
-  font-size: 100px;
-  font-weight: 800;
-  letter-spacing: -.06em;
-  text-align: center;
-  margin: 0 0 16px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-span {
-  color: rgb(0,0,0);
-  display: block;
-  position: relative;
-  line-height: 1.1;
-  padding: 0 12px;
-}
-
-span::before {
-  background: linear-gradient(90deg, var(--start-color), var(--end-color));
-  content: var(--content);
-  position: absolute;
-  inset: 0;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color:transparent;
-  animation: animated 9s infinite;
-  animation-delay: var(--delay);
-}
-
-@keyframes animated {
-  0%, 16.667%, 100% {
-    opacity: 1;
-  }
-  33.3333%, 83.333% {
-    opacity: 0;
-  }
-}
