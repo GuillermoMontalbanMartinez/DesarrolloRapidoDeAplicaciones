@@ -65,6 +65,7 @@
       position: absolute;
       inset: 0;
       -webkit-background-clip: text;
+      background-clip: text;
       -webkit-text-fill-color: transparent;
       animation: animated 9s infinite;
       animation-delay: var(--delay);

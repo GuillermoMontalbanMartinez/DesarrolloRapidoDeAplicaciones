@@ -7,7 +7,7 @@ import { RoutinesService } from '../routines-service.service';
   styleUrls: ['./rutine.component.scss']
 })
 export class RutineComponent implements OnInit {
-  rutinesSaved : any[] = [];
+  routinesSaved : any[] = [];
 
   constructor(public routineService: RoutinesService ) { }
 
@@ -19,8 +19,8 @@ export class RutineComponent implements OnInit {
   fillArray()  {
     this.routineService.getRoutines().subscribe(
       data => {
-        this.rutinesSaved = data;
-        console.log(this.rutinesSaved)
+        this.routinesSaved = data;
+        console.log(this.routinesSaved)
       }
     );
 
