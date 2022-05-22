@@ -26,8 +26,8 @@ export class ExerciseService {
     return this.http.get(url, this.options);
   }
 
-  getExercise(name: string): Observable<any> {
-    const url = `${this.exercisesUrl}/name/${name}`;
+  getExerciseForId(id: string): Observable<any> {
+    const url = `${this.exercisesUrl}/exercise/${id}`;
     return this.http.get(url, this.options);
   }
 }
