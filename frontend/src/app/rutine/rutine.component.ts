@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { lastValueFrom } from 'rxjs';
 import { ExerciseService } from '../exercise.service';
 import { RoutinesService } from '../routines-service.service';
 
@@ -15,7 +16,8 @@ export class RutineComponent implements OnInit {
   ngOnInit(): void {
     this.fillArray();
     this.getExercise();
-    console.log(this.exerciseApiSavedBackend);
+    this.delay(10000).then(() => {console.log(this.routinesSaved)})
+    this.delay(10000).then(() => {console.log(this.exerciseApiSavedBackend)})
   }
 
   // Rellenar el array rutinesSaved con los valores de la api a traves del metodo getRoutines()
@@ -30,20 +32,44 @@ export class RutineComponent implements OnInit {
   }
 
   // Guardar los ejercicios por id en el array rutinesSaved con los valores de la api a traves del metodo getExercise()
-  public getExercise() {
+  async getExercise() {
     this.exerciseApiSavedBackend = [];
       // recorrer this.routinesSaved y coger el idExercise del array
       for (let i = 0; i < this.routinesSaved.length; i++) {
+        console.log(this.routinesSaved);
         for (let j = 0; j < this.routinesSaved[i].length; j++) {
-        this.exerciseService.getExerciseForId(this.routinesSaved[i].exercises[j].idExercise).subscribe(data => {
+          console.log(this.routinesSaved[i][j]);
+          const data = this.exerciseService.getExerciseForId(this.routinesSaved[i].idExercise[j]);
           console.log(data);
-          this.exerciseApiSavedBackend.push(data);
+          this.exerciseApiSavedBackend[i] = await lastValueFrom(data);
           console.log(this.exerciseApiSavedBackend);
-        });
-        console.log(this.exerciseApiSavedBackend);
+       }
       }
-    }
 
   }
 
+  delay(milliseconds : number) {
+    return new Promise(resolve => setTimeout( resolve, milliseconds));
 }
+
+}
+
+/**
+public getExercise() {
+  this.exerciseApiSavedBackend = [];
+    // recorrer this.routinesSaved y coger el idExercise del array
+    for (let i = 0; i < this.routinesSaved.length; i++) {
+      for (let j = 0; j < this.routinesSaved[i].length; j++) {
+      this.exerciseService.getExerciseForId(this.routinesSaved[i].exercises[j].idExercise).subscribe(data => {
+        console.log(data);
+        this.exerciseApiSavedBackend.push(data);
+        console.log(this.exerciseApiSavedBackend);
+      });
+      console.log(this.exerciseApiSavedBackend);
+    }
+  }
+
+}
+
+}
+*/
