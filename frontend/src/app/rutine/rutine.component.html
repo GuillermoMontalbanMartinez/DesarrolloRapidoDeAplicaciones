@@ -25,13 +25,14 @@
     </div>
 
     <div class="fraseScrapping">
-      <h3> Aqui va la frase motivacional </h3>
-      <app-tarjeta-exercise-saved></app-tarjeta-exercise-saved>
+      <app-frase></app-frase>
+    </div>
+
+      <!-- <app-tarjeta-exercise-saved></app-tarjeta-exercise-saved> -->
     </div>
     <div class="rutinasSaved">
       <div *ngFor="let routine of this.routinesSaved">
         <h4> {{routine.name}}</h4>
       </div>
     </div>
-  </div>
   </ng-template>

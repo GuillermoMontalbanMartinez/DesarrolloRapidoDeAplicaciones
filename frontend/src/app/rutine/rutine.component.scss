@@ -3,6 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
 
   h3 {
     font-size: 1.5rem;
@@ -80,6 +81,13 @@
         opacity:0;
       }
     }
+  }
+
+  .fraseScrapping {
+    width: 100%;
+    min-width: 1200px;
+    height: 400px;
+    background-color: #d2d1d1;
   }
 
 }
