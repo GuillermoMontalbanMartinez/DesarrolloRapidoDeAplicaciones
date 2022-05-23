@@ -7,8 +7,8 @@ import { FrasesService } from '../frases.service';
   styleUrls: ['./frase.component.scss']
 })
 export class FraseComponent implements OnInit {
-  frases:string[] = [];
-  frase: string = "";
+  frases:any[] = [];
+  frase: any = "";
 
   constructor(private frasesService: FrasesService) { }
 
@@ -19,11 +19,11 @@ export class FraseComponent implements OnInit {
   getFrase() {
     this.frasesService.getFrases().subscribe(data => {
       this.frases.push(data);
+      console.log(this.frases[0][1].frase);
+      this.frase = this.frases[0][this.random(0,50)].frase;
+      console.log(this.frase.toString());
     });
-    console.log(this.frases);
-    console.log(this.frases[this.random(0, this.frases.length - 1)]);
-    this.frase =  this.frases[this.random(0, this.frases.length - 1)];
-    console.log(this.frase);
+
   }
 
   random(min: number, max: number): number{
