@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-routines-saved',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./routines-saved.component.scss']
 })
 export class RoutinesSavedComponent implements OnInit {
-
+  @Input() nameRoutine: string = '';
   constructor() { }
 
   ngOnInit(): void {
