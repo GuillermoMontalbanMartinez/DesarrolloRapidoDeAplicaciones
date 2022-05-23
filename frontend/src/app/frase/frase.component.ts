@@ -20,8 +20,7 @@ export class FraseComponent implements OnInit {
     this.frasesService.getFrases().subscribe(data => {
       this.frases.push(data);
       console.log(this.frases[0][1].frase);
-      this.frase = this.frases[0][this.random(0,50)].frase;
-      console.log(this.frase.toString());
+      this.frase = this.frases[0][this.random(0,49)].frase;
     });
 
   }

@@ -34,11 +34,9 @@ export class RutineComponent implements OnInit {
     this.exerciseApiSavedBackend = [];
       // recorrer this.routinesSaved y coger el idExercise del array
       for (let i = 0; i < this.routinesSaved.length; i++) {
-
         for (let j = 0; j < this.routinesSaved[i].exercises.length; j++) {
-
           const aux =  this.exerciseService.getExerciseForId(this.routinesSaved[i].exercises[j].idExercise).subscribe(
-            data2=> {
+            data2 => {
               this.exerciseApiSavedBackend.push(data2);
               // this.exerciseApiSavedBackend[i] =  await lastValueFrom(aux);
               // console.log(this.exerciseApiSavedBackend);
