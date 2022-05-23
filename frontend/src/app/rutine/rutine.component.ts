@@ -14,43 +14,48 @@ export class RutineComponent implements OnInit {
   constructor(public routineService: RoutinesService, private exerciseService: ExerciseService) { }
 
   ngOnInit(): void {
-    this.fillArray();
     this.getExercise();
-    this.delay(10000).then(() => {console.log(this.routinesSaved)})
-    this.delay(10000).then(() => {console.log(this.exerciseApiSavedBackend)})
   }
 
   // Rellenar el array rutinesSaved con los valores de la api a traves del metodo getRoutines()
   fillArray()  {
-    this.routineService.getRoutines().subscribe(
-      data => {
-        this.routinesSaved = data;
-        // console.log(this.routinesSaved)
-      }
-    );
+
 
   }
 
   // Guardar los ejercicios por id en el array rutinesSaved con los valores de la api a traves del metodo getExercise()
   async getExercise() {
+
+    this.routineService.getRoutines().subscribe(
+      async data => {
+        this.routinesSaved = data;
+        // console.log(this.routinesSaved)
+
     this.exerciseApiSavedBackend = [];
       // recorrer this.routinesSaved y coger el idExercise del array
       for (let i = 0; i < this.routinesSaved.length; i++) {
-        console.log(this.routinesSaved);
-        for (let j = 0; j < this.routinesSaved[i].length; j++) {
-          console.log(this.routinesSaved[i][j]);
-          const data = this.exerciseService.getExerciseForId(this.routinesSaved[i].idExercise[j]);
-          console.log(data);
-          this.exerciseApiSavedBackend[i] = await lastValueFrom(data);
-          console.log(this.exerciseApiSavedBackend);
+
+        for (let j = 0; j < this.routinesSaved[i].exercises.length; j++) {
+
+          const aux =  this.exerciseService.getExerciseForId(this.routinesSaved[i].exercises[j].idExercise).subscribe(
+            data2=> {
+              this.exerciseApiSavedBackend.push(data2);
+              // this.exerciseApiSavedBackend[i] =  await lastValueFrom(aux);
+              // console.log(this.exerciseApiSavedBackend);
+            }
+          );
+
        }
       }
-
+    }
+    );
   }
 
   delay(milliseconds : number) {
     return new Promise(resolve => setTimeout( resolve, milliseconds));
-}
+  }
+
+
 
 }
 
@@ -73,3 +78,9 @@ public getExercise() {
 
 }
 */
+
+
+/*******************************
+ *
+ *
+ */
