@@ -12,4 +12,7 @@ export class RoutinesSavedComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  deleteRoutine(): void {
+    console.log('delete');
+  }
 }
