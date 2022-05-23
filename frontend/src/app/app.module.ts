@@ -21,6 +21,7 @@ import { TarjetaExerciseUploadComponent } from './tarjeta-exercise-upload/tarjet
 import { FormsModule } from '@angular/forms';
 import { TarjetaExerciseSavedComponent } from './tarjeta-exercise-saved/tarjeta-exercise-saved.component';
 import { FraseComponent } from './frase/frase.component';
+import { RoutinesSavedComponent } from './routines-saved/routines-saved.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { FraseComponent } from './frase/frase.component';
     ExerciseUploadComponent,
     TarjetaExerciseUploadComponent,
     TarjetaExerciseSavedComponent,
-    FraseComponent
+    FraseComponent,
+    RoutinesSavedComponent
   ],
   imports: [
     BrowserModule,
