@@ -7,6 +7,8 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class RoutinesSavedComponent implements OnInit {
   @Input() nameRoutine: string = '';
+  @Input() array: any[] = [];
+
   constructor() { }
 
   ngOnInit(): void {
