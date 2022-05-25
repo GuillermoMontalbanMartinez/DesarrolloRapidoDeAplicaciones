@@ -17,7 +17,8 @@ export class ExerciseService {
       // 7fedecf61dmshb035ea6ad2217a7p1c2bf3jsnca7f3700c68f
       // 5e6c1a7648mshd5d8d3e863ea9eap1fe98fjsne6a4df7a039b
       // 0ea2658ba7mshf486770769af845p1d27edjsn0f4e526df266
-      'X-RapidAPI-Key': '0ea2658ba7mshf486770769af845p1d27edjsn0f4e526df266',
+      // 4ea12f3404msh0ed0deaedc06b14p18dfb5jsnddb43a6dcb9c
+      'X-RapidAPI-Key': '4ea12f3404msh0ed0deaedc06b14p18dfb5jsnddb43a6dcb9',
     }
   };
 
