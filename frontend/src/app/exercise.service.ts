@@ -19,7 +19,7 @@ export class ExerciseService {
       // 0ea2658ba7mshf486770769af845p1d27edjsn0f4e526df266
       // 4ea12f3404msh0ed0deaedc06b14p18dfb5jsnddb43a6dcb9c
       // 56db385890msh7ea32a2cfa38fc0p142951jsnb2786a05aa13
-      'X-RapidAPI-Key': '56db385890msh7ea32a2cfa38fc0p142951jsnb2786a05aa13',
+      'X-RapidAPI-Key': '56db385890msh7ea32a2cfa38fc0p142951jsnb2786a05aa1',
     }
   };
 
