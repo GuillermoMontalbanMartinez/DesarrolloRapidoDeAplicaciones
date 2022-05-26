@@ -39,30 +39,21 @@ export class RutineComponent implements OnInit {
       // recorrer this.routinesSaved y coger el idExercise del array
       for (let i = 0; i < this.routinesSaved.length; i++) {
         for (let j = 0; j < this.routinesSaved[i].exercises.length; j++) {
-          const aux =  this.exerciseService.getExerciseForId(this.routinesSaved[i].exercises[j].idExercise).subscribe(
-            async data2 => {
+          this.exerciseService.getExerciseForId(this.routinesSaved[i].exercises[j].idExercise).subscribe(
+            async (data2: any) => {
               if(this.exerciseApiSavedBackend.some((e : {name:String, exercises : []})  => e.name === this.routinesSaved[i].name)){
                 this.exerciseApiSavedBackend.find((e : {name:String, exercises : []})  =>
-                e.name === this.routinesSaved[i].name).exercises.push(this.routinesSaved[i].exercises[j]);
+                e.name === this.routinesSaved[i].name).exercises.push(data2);
               } else {
                 this.exerciseApiSavedBackend.push({name: this.routinesSaved[i].name, exercises: []});
               }
-              console.log(data2);
-              console.log(this.routinesSaved);
-              console.log(this.exerciseApiSavedBackend);
-              this.magic();
-              this.routinesWithExercises = await this.magic();
-              console.log(this.routinesWithExercises);
 
-              // this.exerciseApiSavedBackend[i] =  await lastValueFrom(aux);
-              // console.log(this.exerciseApiSavedBackend);
+              console.log(this.exerciseApiSavedBackend);
             }
           );
 
        }
       }
-      this.routinesWithExercises =  await this.magic();
-      console.log(this.routinesWithExercises);
     }
 
     );

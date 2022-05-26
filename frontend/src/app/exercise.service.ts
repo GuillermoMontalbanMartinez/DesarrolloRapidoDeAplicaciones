@@ -18,7 +18,8 @@ export class ExerciseService {
       // 5e6c1a7648mshd5d8d3e863ea9eap1fe98fjsne6a4df7a039b
       // 0ea2658ba7mshf486770769af845p1d27edjsn0f4e526df266
       // 4ea12f3404msh0ed0deaedc06b14p18dfb5jsnddb43a6dcb9c
-      'X-RapidAPI-Key': '4ea12f3404msh0ed0deaedc06b14p18dfb5jsnddb43a6dcb9',
+      // 56db385890msh7ea32a2cfa38fc0p142951jsnb2786a05aa13
+      'X-RapidAPI-Key': '56db385890msh7ea32a2cfa38fc0p142951jsnb2786a05aa13',
     }
   };
 
@@ -29,8 +30,9 @@ export class ExerciseService {
     return this.http.get(url, this.options);
   }
 
-  getExerciseForId(id: string): Observable<any> {
+  getExerciseForId(id: string) {
     const url = `${this.exercisesUrl}/exercise/${id}`;
-    return this.http.get(url, this.options);
+    return this.http.get(url, this.options)
+
   }
 }

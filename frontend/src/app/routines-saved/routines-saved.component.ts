@@ -6,9 +6,8 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./routines-saved.component.scss']
 })
 export class RoutinesSavedComponent implements OnInit {
-  @Input() nameRoutine: string = '';
-  @Input() array: any[] = [];
-
+  @Input() exerciseApiSavedBackend: any[] = [];
+  
   constructor() { }
 
   ngOnInit(): void {

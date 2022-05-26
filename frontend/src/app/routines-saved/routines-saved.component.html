@@ -1,28 +1,28 @@
-<div class="containerRoutinesSaved">
+<div *ngFor="let rutine of exerciseApiSavedBackend">
+  <div class="containerRoutinesSaved">
+    <div class="titulo">
+      <h4>Rutina: {{ rutine.name }}</h4>
+    </div>
 
-  <div class="titulo">
-    <h4> Rutina: {{nameRoutine}}</h4>
-  </div>
+    <div class="fraseScrapping">
+      <app-frase></app-frase>
+    </div>
 
-  <div class="fraseScrapping">
-    <app-frase></app-frase>
-  </div>
+    <div class="exercises">
+      <div *ngFor="let exercise of rutine.exercises">
+        <app-tarjeta-exercise-saved
+          style="margin: 10px"
+          [name]="exercise?.name!"
+          [gifUrl]="exercise?.gifUrl!"
+          [bodyPart]="exercise?.bodyPart!"
+          [equipment]="exercise?.equipment!"
+          [target]="exercise?.target!"
+        ></app-tarjeta-exercise-saved>
+      </div>
+    </div>
 
-  <div class="exercises">
-    <div *ngFor="let exercise of array">
-      <app-tarjeta-exercise-saved
-        style="margin: 10px"
-        [name]="exercise?.name!"
-        [gifUrl]="exercise?.gifUrl!"
-        [bodyPart]="exercise?.bodyPart!"
-        [equipment]="exercise?.equipment!"
-        [target]="exercise?.target!"
-      ></app-tarjeta-exercise-saved>
+    <div class="buttonBorrarRutina">
+      <button (click)="deleteRoutine()">Borrar Rutina</button>
     </div>
   </div>
-
-  <div class="buttonBorrarRutina">
-    <button (click)="deleteRoutine()">Borrar Rutina</button>
-  </div>
-
 </div>
