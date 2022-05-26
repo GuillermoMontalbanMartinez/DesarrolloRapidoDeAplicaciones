@@ -38,8 +38,8 @@ public class RutinasController {
         this.repository.save(routine);
     }
 
-    @DeleteMapping(path = "")
-    public void deleteRutines(@PathVariable long id) {
+    @DeleteMapping(path = "/{id}")
+    public void deleteRutines(@PathVariable("id") long id) {
         this.repository.deleteById(id);
     }
 

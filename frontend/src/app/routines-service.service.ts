@@ -24,5 +24,11 @@ export class RoutinesService {
     return this.http.post(this.url, routine, this.httpOptions);
   }
 
-  
+  // Eliminar rutina de la base de base de datos
+  deleteRoutine(id: string): Observable<any> {
+    const url = `${this.url}/${id}`;
+    return this.http.delete(url, this.httpOptions);
+  }
+
+
 }

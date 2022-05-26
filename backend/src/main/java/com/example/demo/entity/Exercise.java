@@ -7,6 +7,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @Entity
 @Table(name = "exercises")
 public class Exercise {

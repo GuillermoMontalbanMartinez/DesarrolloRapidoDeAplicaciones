@@ -12,6 +12,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @Entity
 @Table(name="routines")
 public class Routine {

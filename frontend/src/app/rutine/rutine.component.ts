@@ -48,7 +48,7 @@ export class RutineComponent implements OnInit {
                 this.exerciseApiSavedBackend.push({name: this.routinesSaved[i].name, exercises: []});
               }
 
-              console.log(this.exerciseApiSavedBackend);
+              //console.log(this.exerciseApiSavedBackend);
             }
           );
 
@@ -57,6 +57,7 @@ export class RutineComponent implements OnInit {
     }
 
     );
+
   }
 
   // Crear un array que cada item contiene el nombre y los ejercicios de la api usando el método getExerciseForId
