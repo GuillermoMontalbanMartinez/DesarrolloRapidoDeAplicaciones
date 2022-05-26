@@ -27,7 +27,10 @@ export class RoutinesSavedComponent implements OnInit {
   deleteRoutine(nombre: string): void {
     let id = this.routinesSaved.find(routine => routine.name === nombre).id;
     this.routinesService.deleteRoutine(id).subscribe(data => {
-      this.fillArray();
+      this.routinesSaved = [];
+      this.routinesService.getRoutines().subscribe(data2 => {
+        this.routinesSaved = data2;
+      });
     });
   }
 }
