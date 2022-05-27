@@ -21,21 +21,21 @@ public class FraseService {
      * @return Lista de frases
      */
     public List<FraseDto> retrieveFrase() {
-            List<FraseDto> frases = new ArrayList<>();
+        List<FraseDto> frases = new ArrayList<>();
 
-            try {
-                Document webPage = Jsoup.connect("https://www.axahealthkeeper.com/blog/las-50-mejores-frases-para-motivarse-a-no-dejar-de-hacer-deporte/").get();
-                Element ol = webPage.getElementsByTag("ol").get(0);
+        try {
+            Document webPage = Jsoup.connect("https://www.axahealthkeeper.com/blog/las-50-mejores-frases-para-motivarse-a-no-dejar-de-hacer-deporte/").get();
+            Element ol = webPage.getElementsByTag("ol").get(0);
                 
-                for (Element li : ol.getElementsByTag("li")) {
-                    frases.add(new FraseDto(li.text()));
-                }
-                return frases;
-            } catch (Exception e) {
-                e.printStackTrace();
+            for (Element li : ol.getElementsByTag("li")) {
+                frases.add(new FraseDto(li.text()));
             }
-
-            return null;
+            return frases;
+        } catch (Exception e) {
+             e.printStackTrace();
         }
+
+        return null;
+    }
 
     }
