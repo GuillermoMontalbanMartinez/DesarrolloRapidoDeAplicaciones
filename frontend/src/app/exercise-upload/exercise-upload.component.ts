@@ -30,5 +30,6 @@ export class ExerciseUploadComponent implements OnInit {
     this.Iroutine.name = this.nameRoutine;
     this.Iroutine.exercises = this.shareValues.convertExerciseToExerciseBackend();
     this.routineService.saveRoutine(this.Iroutine).subscribe();
+    this.shareValues.cleanExerciseUpload();
   }
 }

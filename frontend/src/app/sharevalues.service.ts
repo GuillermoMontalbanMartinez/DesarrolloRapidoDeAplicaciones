@@ -46,5 +46,9 @@ export class SharevaluesService {
     return this.exerciseUpload;
   }
 
+  // Dejar array exerciseUpload vacio
+  cleanExerciseUpload() {
+    this.exerciseUpload = [];
+  }
 
 }
