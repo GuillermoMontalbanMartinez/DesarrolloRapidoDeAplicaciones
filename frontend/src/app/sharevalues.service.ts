@@ -5,12 +5,15 @@ import { IExercisebackend } from './IExerciseBackend';
 @Injectable({
   providedIn: 'root'
 })
+
+// Clase que contiene los valores que se compartirán entre los componentes de la vista ejercicios
 export class SharevaluesService {
   private exerciseUpload         : Iexercise[] = [];
   private exerciseUploadBackend  : IExercisebackend[] = [];
 
   constructor() { }
 
+  // Agregar ejercicios al componente ejercicios cargados
   addExerciseToArray(valor: any) {
     const valueToBeAdded : Iexercise = {
       bodyPart: valor.bodyPart,
@@ -38,6 +41,7 @@ export class SharevaluesService {
     return this.exerciseUploadBackend;
   }
 
+  // Devuelve los ejercicios cargados en el componenente ejercicios cargados (ejercicios-cargados.component.ts)
   getExerciseUpload(): Iexercise[] {
     return this.exerciseUpload;
   }
